@@ -1,3 +1,9 @@
+How to Build
+============
+
+All the images can be built independently except keras. Please build tensorflow cpu
+before building keras image. Base image for keras image is tensorflow:14.04.
+
 Reference
 =========
  * Nvidia docker images
@@ -9,3 +15,5 @@ Reference
    + https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/docker
  * Theano
    + http://deeplearning.net/software/theano/install_ubuntu.html
+ * Keras
+   + https://keras.io/#installation
