@@ -31,3 +31,5 @@ Reference
    + https://github.com/BVLC/caffe/tree/master/docker
  * Pytorch
    + https://github.com/pytorch/pytorch/blob/master/Dockerfile
+ * Spacy
+   + https://spacy.io/docs/usage/
