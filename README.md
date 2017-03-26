@@ -29,3 +29,5 @@ Reference
    + https://keras.io/#installation
  * Caffe
    + https://github.com/BVLC/caffe/tree/master/docker
+ * Pytorch
+   + https://github.com/pytorch/pytorch/blob/master/Dockerfile

@@ -1,4 +1,3 @@
-# Source https://github.com/pytorch/pytorch/blob/master/Dockerfile
 FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu14.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
