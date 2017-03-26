@@ -1,4 +1,4 @@
-FROM tensorflow:14.04
+FROM acusensehub/tensorflow:cpu
 
 # h5py is optional dependency for keras
 RUN apt-get update && apt-get install -y libhdf5-dev libhdf5-serial-dev
