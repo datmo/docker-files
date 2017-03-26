@@ -1,5 +1,5 @@
-Docker-files - acusensehub
-==========================
+ai-docker-files - acusensehub
+=============================
 This provides one place location for Dockerfiles for most AI frameworks and tools.
 The docker images are pushed to public dockerhub/acusensehub repository. Aim of this
 repository is to find all dependencies and being able to build stable images to be
@@ -11,6 +11,7 @@ How to Build
 All the images can be built independently except keras. Please build tensorflow cpu
 before building keras image. Base image for keras image is tensorflow:14.04.
 
+Test script for each has been provided.
 
 Caffe already provides Dockerfiles for both gpu and cpu.
 
