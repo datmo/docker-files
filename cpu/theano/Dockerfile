@@ -19,4 +19,3 @@ RUN pip --no-cache-dir install Theano
 
 RUN mkdir -p /test
 COPY theano_test.py /test/
- 
