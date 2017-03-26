@@ -1,6 +1,6 @@
 ai-docker-files - acusensehub
 =============================
-The aim of this project is to have one place location for Dockerfiles for most AI
+The aim of this repository is to have one place location to find Dockerfiles for most AI
 frameworks and tools. The docker images are pushed to public dockerhub/acusensehub
 repository.
 

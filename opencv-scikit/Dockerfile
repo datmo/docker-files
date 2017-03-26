@@ -76,7 +76,3 @@ RUN echo '/opt/lib/python2.7/dist-packages/'>/usr/lib/python2.7/dist-packages/cv
 RUN echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
 
 WORKDIR "/root"
-CMD ["/bin/bash"]
-
-RUN mkdir -p /test
-COPY opencv_scikit_test.py /test/

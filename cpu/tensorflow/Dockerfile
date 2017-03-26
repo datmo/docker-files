@@ -40,6 +40,6 @@ RUN pip --no-cache-dir install \
 RUN pip --no-cache-dir install \
    https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp27-none-linux_x86_64.whl
 
-RUN mkdir -p /test
-COPY tensorflow_test.py /test/
+WORKDIR /workspace
+RUN chmod -R a+w /workspace
  

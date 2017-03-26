@@ -17,5 +17,5 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
 
 RUN pip --no-cache-dir install Theano
 
-RUN mkdir -p /test
-COPY theano_test.py /test/
+WORKDIR /workspace
+RUN chmod -R a+w /workspace

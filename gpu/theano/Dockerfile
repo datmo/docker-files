@@ -39,6 +39,5 @@ ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 RUN pip install pycuda pydot-ng \
     git+https://github.com/lebedov/scikit-cuda.git#egg=scikit-cuda
 
-RUN mkdir -p /test
-COPY theano_test.py /test/
- 
+WORKDIR /workspace
+RUN chmod -R a+w /workspace
