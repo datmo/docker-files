@@ -33,5 +33,8 @@ WORKDIR /opt/pytorch
 RUN cat requirements.txt | xargs -n1 pip install --no-cache-dir && \
     pip install -v .
 
+RUN mkdir -p /test
+COPY pytorch_test.py /test/
+
 WORKDIR /workspace
 RUN chmod -R a+w /workspace

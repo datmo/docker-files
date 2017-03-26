@@ -44,4 +44,3 @@ ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
 RUN mkdir -p /test
 COPY tensorflow_gpu_test.py /test/
- 
