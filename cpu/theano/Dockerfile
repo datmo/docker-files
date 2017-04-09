@@ -17,5 +17,7 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
 
 RUN pip --no-cache-dir install Theano
 
+RUN pip --no-cache-dir install jupyter
+
 WORKDIR /workspace
 RUN chmod -R a+w /workspace

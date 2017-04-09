@@ -18,5 +18,7 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
 RUN pip install -U spacy
 RUN python -m spacy.en.download
 
+RUN pip --no-cache-dir install jupyter
+
 WORKDIR /workspace
 RUN chmod -R a+w /workspace

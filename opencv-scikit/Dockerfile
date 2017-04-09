@@ -75,4 +75,6 @@ RUN cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/opt .. \
 RUN echo '/opt/lib/python2.7/dist-packages/'>/usr/lib/python2.7/dist-packages/cv2.pth
 RUN echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
 
+RUN pip --no-cache-dir install jupyter
+
 WORKDIR "/root"

@@ -39,5 +39,7 @@ ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 RUN pip install pycuda pydot-ng \
     git+https://github.com/lebedov/scikit-cuda.git#egg=scikit-cuda
 
+RUN pip --no-cache-dir install jupyter
+
 WORKDIR /workspace
 RUN chmod -R a+w /workspace
