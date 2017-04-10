@@ -23,7 +23,8 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
     rm get-pip.py
 
-RUN pip --no-cache-dir install \
+RUN pip --no-cache-dir install --upgrade ipython && \
+    pip --no-cache-dir install \
         ipykernel \
         jupyter \
         matplotlib \
@@ -41,6 +42,9 @@ RUN pip --no-cache-dir install \
     https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.0.1-cp27-none-linux_x86_64.whl
 
 ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
+
+# Expose Ports for Tensorboard (6006) and Ipython (8888)
+EXPOSE 6006 8888
 
 WORKDIR /workspace
 RUN chmod -R a+w /workspace

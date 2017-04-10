@@ -17,7 +17,24 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
 
 RUN pip --no-cache-dir install Theano
 
-RUN pip --no-cache-dir install jupyter
+# Install other useful Python packages using pip
+RUN pip --no-cache-dir install --upgrade ipython && \
+	pip --no-cache-dir install \
+		Cython \
+		ipykernel \
+		jupyter \
+		path.py \
+		Pillow \
+		pygments \
+		six \
+		sphinx \
+		wheel \
+		zmq \
+		&& \
+	python -m ipykernel.kernelspec
+
+# Expose Ports for Ipython (8888)
+EXPOSE 8888
 
 WORKDIR /workspace
 RUN chmod -R a+w /workspace

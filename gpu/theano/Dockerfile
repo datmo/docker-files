@@ -39,7 +39,24 @@ ENV LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 RUN pip install pycuda pydot-ng \
     git+https://github.com/lebedov/scikit-cuda.git#egg=scikit-cuda
 
-RUN pip --no-cache-dir install jupyter
+# Install other useful Python packages using pip
+RUN pip --no-cache-dir install --upgrade ipython && \
+	pip --no-cache-dir install \
+		Cython \
+		ipykernel \
+		jupyter \
+		path.py \
+		Pillow \
+		pygments \
+		six \
+		sphinx \
+		wheel \
+		zmq \
+		&& \
+	python -m ipykernel.kernelspec
+
+# Expose Ports for Ipython (8888)
+EXPOSE 8888
 
 WORKDIR /workspace
 RUN chmod -R a+w /workspace
