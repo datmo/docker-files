@@ -43,8 +43,12 @@ RUN pip --no-cache-dir install \
 
 ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
-# Expose Ports for Tensorboard (6006) and Ipython (8888)
-EXPOSE 6006 8888
+# Expose Ports for Tensorboard (6006)
+EXPOSE 6006
+
+#Jupyter notebook related configs
+COPY jupyter_notebook_config.py /root/.jupyter/
+EXPOSE 8888
 
 WORKDIR /workspace
 RUN chmod -R a+w /workspace

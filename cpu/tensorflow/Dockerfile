@@ -40,9 +40,13 @@ RUN pip --no-cache-dir install --upgrade ipython && \
 RUN pip --no-cache-dir install \
    https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp27-none-linux_x86_64.whl
 
-# Expose Ports for Tensorboard (6006) and Ipython (8888)
-EXPOSE 6006 8888
+# Expose Ports for Tensorboard (6006)
+EXPOSE 6006
+
+#Jupyter notebook related configs
+COPY jupyter_notebook_config.py /root/.jupyter/
+EXPOSE 8888
 
 WORKDIR /workspace
 RUN chmod -R a+w /workspace
- 
+
