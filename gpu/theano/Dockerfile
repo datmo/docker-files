@@ -59,6 +59,9 @@ RUN pip --no-cache-dir install --upgrade ipython && \
 RUN apt-get update && apt-get install -y libopencv-dev python-opencv && \
     echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
 
+#Jupyter notebook related configs
+COPY jupyter_notebook_config.py /root/.jupyter/
+
 # Expose Ports for Ipython (8888)
 EXPOSE 8888
 

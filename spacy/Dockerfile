@@ -34,7 +34,8 @@ RUN pip --no-cache-dir install --upgrade ipython && \
 		&& \
 	python -m ipykernel.kernelspec
 
-# Expose Ports for Ipython (8888)
+#Jupyter notebook related configs
+COPY jupyter_notebook_config.py /root/.jupyter/
 EXPOSE 8888
 
 WORKDIR /workspace

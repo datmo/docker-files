@@ -30,5 +30,9 @@ RUN cat requirements.txt | xargs -n1 pip install --no-cache-dir && \
     CMAKE_INCLUDE_PATH=/opt/conda/envs/pytorch-py35/include \
     pip install -v .
 
+#Jupyter notebook related configs
+COPY jupyter_notebook_config.py /root/.jupyter/
+EXPOSE 8888
+
 WORKDIR /workspace
 RUN chmod -R a+w /workspace
