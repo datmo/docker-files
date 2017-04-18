@@ -43,6 +43,10 @@ RUN pip --no-cache-dir install \
 
 ENV LD_LIBRARY_PATH /usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH
 
+# Install OpenCV
+RUN apt-get update && apt-get install -y libopencv-dev python-opencv && \
+    echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
+
 # Expose Ports for Tensorboard (6006) and Ipython (8888)
 EXPOSE 6006 8888
 

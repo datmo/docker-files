@@ -23,7 +23,7 @@ RUN pip --no-cache-dir install Theano
 RUN apt-get install -y software-properties-common && \
     add-apt-repository -y ppa:george-edison55/cmake-3.x && \
     apt-get update && \
-    apt-get install -y cmake
+    apt-get install -y cmake git
 RUN pip install cython
 
 RUN git clone https://github.com/Theano/libgpuarray.git && \
@@ -54,6 +54,10 @@ RUN pip --no-cache-dir install --upgrade ipython && \
 		zmq \
 		&& \
 	python -m ipykernel.kernelspec
+
+# Install OpenCV
+RUN apt-get update && apt-get install -y libopencv-dev python-opencv && \
+    echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
 
 # Expose Ports for Ipython (8888)
 EXPOSE 8888

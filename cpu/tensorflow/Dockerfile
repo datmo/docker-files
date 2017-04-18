@@ -6,6 +6,8 @@ MAINTAINER Acusense devs <dev@acusense.ai>
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         curl \
+        git \
+        cmake \
         libfreetype6-dev \
         libpng12-dev \
         libzmq3-dev \
@@ -39,6 +41,10 @@ RUN pip --no-cache-dir install --upgrade ipython && \
 # Install TensorFlow CPU version from central repo
 RUN pip --no-cache-dir install \
    https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp27-none-linux_x86_64.whl
+
+# Install OpenCV
+RUN apt-get update && apt-get install -y libopencv-dev python-opencv && \
+    echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
 
 # Expose Ports for Tensorboard (6006) and Ipython (8888)
 EXPOSE 6006 8888

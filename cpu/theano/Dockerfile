@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     g++ \
     libopenblas-dev \
     git \
-    curl
+    curl \
+    cmake
 
 RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
@@ -32,6 +33,10 @@ RUN pip --no-cache-dir install --upgrade ipython && \
 		zmq \
 		&& \
 	python -m ipykernel.kernelspec
+
+# Install OpenCV
+RUN apt-get update && apt-get install -y libopencv-dev python-opencv && \
+    echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
 
 # Expose Ports for Ipython (8888)
 EXPOSE 8888
