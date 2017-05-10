@@ -65,5 +65,9 @@ COPY jupyter_notebook_config.py /root/.jupyter/
 # Expose Ports for Ipython (8888)
 EXPOSE 8888
 
+#Adding flask
+RUN pip install flask
+EXPOSE 5000
+
 WORKDIR /workspace
 RUN chmod -R a+w /workspace

@@ -95,4 +95,8 @@ RUN pip --no-cache-dir install --upgrade ipython && \
 COPY jupyter_notebook_config.py /root/.jupyter/
 EXPOSE 8888
 
+#Adding flask
+RUN pip install flask
+EXPOSE 5000
+
 WORKDIR "/root"

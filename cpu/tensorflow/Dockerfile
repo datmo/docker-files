@@ -53,6 +53,10 @@ EXPOSE 6006
 COPY jupyter_notebook_config.py /root/.jupyter/
 EXPOSE 8888
 
+#Adding flask
+RUN pip install flask
+EXPOSE 5000
+
 WORKDIR /workspace
 RUN chmod -R a+w /workspace
 
