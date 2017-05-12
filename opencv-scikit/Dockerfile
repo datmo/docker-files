@@ -99,4 +99,6 @@ EXPOSE 8888
 RUN pip install flask
 EXPOSE 5000
 
-WORKDIR "/root"
+WORKDIR /workspace
+RUN chmod -R a+w /workspace
+
