@@ -57,6 +57,27 @@ RUN apt-get upgrade -y \
                     libvtk6-dev \
                     && apt-get clean
 
+# Install pip
+RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
+    python get-pip.py && \
+    rm get-pip.py
+
+# Install other useful Python packages using pip
+RUN pip install --upgrade ipython && \
+	pip install \
+		Cython \
+		ipykernel \
+		jupyter \
+		path.py \
+		Pillow \
+		pygments \
+		six \
+		sphinx \
+		wheel \
+		zmq \
+		&& \
+	python -m ipykernel.kernelspec
+
 # git clone the repo from OpenCV official repository on GitHub.
 RUN mkdir /opt/opencv-build && cd /opt/opencv-build \
 && git clone https://github.com/Itseez/opencv && cd opencv \
@@ -74,22 +95,6 @@ RUN cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/opt .. \
 # Let python can find the newly install OpenCV modules.
 RUN echo '/opt/lib/python2.7/dist-packages/'>/usr/lib/python2.7/dist-packages/cv2.pth
 RUN echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
-
-# Install other useful Python packages using pip
-RUN pip --no-cache-dir install --upgrade ipython && \
-	pip --no-cache-dir install \
-		Cython \
-		ipykernel \
-		jupyter \
-		path.py \
-		Pillow \
-		pygments \
-		six \
-		sphinx \
-		wheel \
-		zmq \
-		&& \
-	python -m ipykernel.kernelspec
 
 #Jupyter notebook related configs
 COPY jupyter_notebook_config.py /root/.jupyter/
