@@ -1,7 +1,7 @@
-ai-docker-files - [acusensehub](https://hub.docker.com/u/acusensehub/)
-=============================
+ai-docker-files - [datmo DockerHub](https://hub.docker.com/u/datmo/)
+====================================================================
 The aim of this repository is to have one place location to find Dockerfiles for most AI
-frameworks and tools. The docker images are pushed to public dockerhub/acusensehub
+frameworks and tools. The docker images are pushed to public dockerhub/datmo
 repository.
 
 How to Build
