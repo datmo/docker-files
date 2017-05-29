@@ -1,6 +1,5 @@
 FROM ubuntu:14.04
-
-MAINTAINER Acusense devs <dev@acusense.ai>
+MAINTAINER Datmo devs <dev@datmo.io>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
          build-essential \

@@ -1,6 +1,5 @@
 FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu14.04
-
-MAINTAINER Acusense devs <dev@acusense.ai>
+MAINTAINER Datmo devs <dev@datmo.io>
 RUN apt-get update && apt-get install -y \
     python-numpy \
     python-scipy \

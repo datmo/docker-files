@@ -1,4 +1,5 @@
-FROM acusensehub/tensorflow:cpu
+FROM datmo/tensorflow:cpu
+MAINTAINER Datmo devs <dev@datmo.io>
 
 # h5py is optional dependency for keras
 RUN apt-get update && apt-get install -y libhdf5-dev libhdf5-serial-dev
