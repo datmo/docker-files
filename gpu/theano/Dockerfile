@@ -60,9 +60,11 @@ RUN apt-get update && apt-get install -y libopencv-dev python-opencv && \
 
 #Jupyter notebook related configs
 COPY jupyter_notebook_config.py /root/.jupyter/
-
 # Expose Ports for Ipython (8888)
 EXPOSE 8888
+
+# Jupyter has issues with being run directly: https://github.com/ipython/ipython/issues/7062
+COPY run_jupyter.sh /home/
 
 #Adding flask
 RUN pip install flask

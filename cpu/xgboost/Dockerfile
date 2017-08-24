@@ -30,3 +30,32 @@ RUN update-alternatives --set libblas.so.3 \
       /usr/lib/atlas-base/atlas/libblas.so.3; \
     update-alternatives --set liblapack.so.3 \
      /usr/lib/atlas-base/atlas/liblapack.so.3
+
+
+###### datmo essential ####
+
+# Install CURL
+RUN apt-get install curl
+
+# Install other useful Python packages using pip
+RUN apt-get update
+RUN pip install --upgrade ipython && \
+        pip install \
+                ipykernel \
+                jupyter \
+                && \
+        python -m ipykernel.kernelspec
+
+# Notebook requirements
+RUN apt-get install -y  ipython \
+		        ipython-notebook
+
+#Jupyter notebook related configs
+COPY jupyter_notebook_config.py /root/.jupyter/
+EXPOSE 8888
+
+# Jupyter has issues with being run directly: https://github.com/ipython/ipython/issues/7062
+COPY run_jupyter.sh /home/
+
+RUN pip install flask
+EXPOSE 5000

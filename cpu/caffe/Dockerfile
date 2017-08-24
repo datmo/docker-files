@@ -46,3 +46,34 @@ ENV PYTHONPATH=/root/caffe/python:$PYTHONPATH
 
 # Set ~/caffe as working directory
 WORKDIR /root/caffe
+
+# Install CURL
+RUN apt-get install curl
+
+# Install pip
+RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
+    python get-pip.py && \
+    rm get-pip.py
+
+# Install other useful Python packages using pip
+RUN apt-get update
+RUN pip install --upgrade ipython && \
+        pip install \
+                ipykernel \
+                jupyter \
+                && \
+        python -m ipykernel.kernelspec
+
+# Notebook requirements
+RUN apt-get install -y  ipython \
+		        ipython-notebook
+
+#Jupyter notebook related configs
+COPY jupyter_notebook_config.py /root/.jupyter/
+EXPOSE 8888
+
+# Jupyter has issues with being run directly: https://github.com/ipython/ipython/issues/7062
+COPY run_jupyter.sh /home/
+
+RUN pip install flask
+EXPOSE 5000

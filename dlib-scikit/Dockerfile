@@ -76,4 +76,8 @@ EXPOSE 8888
 WORKDIR /workspace
 RUN chmod -R a+w /workspace
 
-COPY ./dlib_scikit_test.py /test/dlib_scikit_test.py
+# Jupyter has issues with being run directly: https://github.com/ipython/ipython/issues/7062
+COPY run_jupyter.sh /home/
+
+RUN pip install flask
+EXPOSE 5000
