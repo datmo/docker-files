@@ -31,9 +31,6 @@ RUN update-alternatives --set libblas.so.3 \
     update-alternatives --set liblapack.so.3 \
      /usr/lib/atlas-base/atlas/liblapack.so.3
 
-
-###### datmo essential ####
-
 # Install CURL
 RUN apt-get install curl
 
@@ -45,10 +42,6 @@ RUN pip install --upgrade ipython && \
                 jupyter \
                 && \
         python -m ipykernel.kernelspec
-
-# Notebook requirements
-RUN apt-get install -y  ipython \
-		        ipython-notebook
 
 #Jupyter notebook related configs
 COPY jupyter_notebook_config.py /root/.jupyter/

@@ -32,6 +32,15 @@ WORKDIR /opt/pytorch
 RUN cat requirements.txt | xargs -n1 pip install --no-cache-dir && \
     pip install -v .
 
+# Install other useful Python packages using pip
+RUN apt-get update
+RUN pip install --upgrade ipython && \
+        pip install \
+                ipykernel \
+                jupyter \
+                && \
+        python -m ipykernel.kernelspec
+
 #Jupyter notebook related configs
 COPY jupyter_notebook_config.py /root/.jupyter/
 EXPOSE 8888

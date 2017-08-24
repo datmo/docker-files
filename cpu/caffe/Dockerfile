@@ -64,10 +64,6 @@ RUN pip install --upgrade ipython && \
                 && \
         python -m ipykernel.kernelspec
 
-# Notebook requirements
-RUN apt-get install -y  ipython \
-		        ipython-notebook
-
 #Jupyter notebook related configs
 COPY jupyter_notebook_config.py /root/.jupyter/
 EXPOSE 8888
