@@ -33,3 +33,17 @@ Reference
    + https://github.com/pytorch/pytorch/blob/master/Dockerfile
  * Spacy
    + https://spacy.io/docs/usage/
+ * XGBoost
+   + This Dockerfile is for libraries such as sklearn, pandas, scipy and xgboost
+   + https://xgboost.readthedocs.io/en/latest/
+ * catboost
+   + This Dockerfile is for libraries such as sklearn, pandas, scipy and catboost
+   + https://tech.yandex.com/catboost/doc/dg/concepts/python-usages-examples-docpage/
+ * kaggle
+   + Gives the environment of running projects in kaggle environment along with jupyter notebook capability
+ * datadotworld
+   + This Dockerfile is for libraries such as sklearn, pandas, scipy, xgboost and datadotworld
+   + You can learn more about datadotworld [here](https://data.world/)
+
+
+
