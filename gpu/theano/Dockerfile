@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu14.04
+FROM nvidia/cuda:9.1-cudnn7-devel-ubuntu16.04
 MAINTAINER Datmo devs <dev@datmo.io>
 RUN apt-get update && apt-get install -y \
     python-numpy \
