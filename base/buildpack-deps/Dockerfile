@@ -1,6 +1,6 @@
 FROM buildpack-deps:xenial
 
-MAINTAINER datmo "dev@datmo.com"
+MAINTAINER Datmo devs <dev@datmo.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		sudo \

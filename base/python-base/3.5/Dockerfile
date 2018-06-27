@@ -1,5 +1,6 @@
 FROM datmo/buildpack-deps:latest-cpu
-MAINTAINER datmo "dev@datmo.com"
+
+MAINTAINER Datmo devs <dev@datmo.com>
 
 # From https://github.com/docker-library/python/blob/master/3.5/jessie/Dockerfile
 # ensure local python is preferred over distribution python

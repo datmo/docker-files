@@ -1,5 +1,6 @@
 FROM datmo/buildpack-deps:latest-cpu
-MAINTAINER datmo "dev@datmo.com"
+
+MAINTAINER Datmo devs <dev@datmo.com>
 
 # From https://github.com/docker-library/python/blob/master/2.7/jessie/Dockerfile
 
