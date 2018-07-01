@@ -1,4 +1,6 @@
-FROM datmo/data-analytics:py35-cpu
+FROM datmo/keras-tensorflow:py27-cpu
+
+MAINTAINER Datmo devs <dev@datmo.com>
 
 # Jupyter
 RUN pip --no-cache-dir install \
@@ -17,9 +19,6 @@ RUN mv /root/.jupyter/jupyter_notebook_config_py2.py /root/.jupyter/jupyter_note
 
 COPY run_jupyter.sh /
 RUN chmod +x /run_jupyter.sh
-
-# Jupyter lab
-RUN pip install jupyterlab==0.32.1
 
 # IPython
 EXPOSE 8888

@@ -1,4 +1,6 @@
-FROM datmo/python-base:py35-gpu
+FROM datmo/python-base:py35-cpu
+
+MAINTAINER Datmo devs <dev@datmo.com>
 
 RUN pip --no-cache-dir install \
         Cython \
@@ -46,4 +48,3 @@ RUN git clone --recursive https://github.com/dmlc/xgboost \
 
 
 ##### ^^^^ Add new contributions above here ^^^^ #####
-

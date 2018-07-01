@@ -1,4 +1,6 @@
-FROM datmo/data-analytics:py35-gpu
+FROM datmo/keras-tensorflow:py35-cpu
+
+MAINTAINER Datmo devs <dev@datmo.com>
 
 # Jupyter
 RUN pip --no-cache-dir install \

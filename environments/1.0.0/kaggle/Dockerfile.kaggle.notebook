@@ -1,4 +1,6 @@
-FROM datmo/data-analytics:py27-gpu
+FROM datmo/kaggle:latest
+
+MAINTAINER Datmo devs <dev@datmo.com>
 
 # Jupyter
 RUN pip --no-cache-dir install \

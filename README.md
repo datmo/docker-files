@@ -2,9 +2,28 @@ ai-docker-files - [datmo DockerHub](https://hub.docker.com/u/datmo/)
 ====================================================================
 The aim of this repository is to have one place location to find Dockerfiles for most AI
 frameworks and tools. The docker images are pushed to public dockerhub/datmo
-repository.
+repository. This is used along with datmo workflow [tool](https://github.com/datmo/datmo) 
 
-How to Build
+Structure
+============
+1. Base image: There are base image for CPU and GPU, followed by combination of py2.7 and py3.5 
+
+    a. datmo/python-base:py35-cpu             
+    b. datmo/python-base:py35-gpu   
+    c. datmo/python-base:py27-cpu   
+    d. datmo/python-base:py27-gpu
+    
+2. Environments: There are two ways in creating an environment,
+ 
+    a. Using the above base image, environments are created. (e.g. datmo/keras-tensorflow:py27-cpu). This is reliable since these are by datmo team.     
+    b. Using any dockerhub image, (e.g. kaggle/python:latest)      
+
+3. Using environments as the base image, workspaces are added. Currently, there are three workspace. 
+    a. Jupyter Notebook
+    b. Jupyterlab
+    c. RStudio
+   
+How to Build a new Environment?
 ============
 
 All the images can be built independently except keras. Please build tensorflow cpu
