@@ -1,4 +1,4 @@
-FROM datmo/data-analytics:py27-gpu
+FROM datmo/data-analytics:gpu-py27
 
 MAINTAINER Datmo devs <dev@datmo.com>
 

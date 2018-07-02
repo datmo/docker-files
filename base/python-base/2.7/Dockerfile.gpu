@@ -1,4 +1,4 @@
-FROM datmo/buildpack-deps:latest-gpu
+FROM datmo/buildpack-deps:gpu
 
 MAINTAINER Datmo devs <dev@datmo.com>
 

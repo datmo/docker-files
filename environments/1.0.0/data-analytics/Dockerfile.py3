@@ -1,4 +1,4 @@
-FROM datmo/python-base:py35-cpu
+FROM datmo/python-base:cpu-py35
 
 MAINTAINER Datmo devs <dev@datmo.com>
 

@@ -1,4 +1,4 @@
-FROM datmo/python-base:py27-cpu
+FROM datmo/python-base:cpu-py27
 
 MAINTAINER Datmo devs <dev@datmo.com>
 
