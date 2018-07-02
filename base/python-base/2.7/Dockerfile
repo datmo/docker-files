@@ -1,4 +1,4 @@
-FROM datmo/buildpack-deps:latest-cpu
+FROM datmo/buildpack-deps:cpu
 
 MAINTAINER Datmo devs <dev@datmo.com>
 

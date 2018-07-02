@@ -1,4 +1,4 @@
-FROM datmo/data-analytics:py27-cpu
+FROM datmo/data-analytics:cpu-py27
 
 MAINTAINER Datmo devs <dev@datmo.com>
 

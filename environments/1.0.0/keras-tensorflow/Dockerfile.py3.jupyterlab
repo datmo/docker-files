@@ -1,4 +1,4 @@
-FROM datmo/keras-tensorflow:py35-cpu
+FROM datmo/keras-tensorflow:cpu-py35
 
 MAINTAINER Datmo devs <dev@datmo.com>
 

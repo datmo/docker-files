@@ -1,4 +1,4 @@
-FROM datmo/keras-tensorflow:py27-gpu
+FROM datmo/keras-tensorflow:gpu-py27
 
 MAINTAINER Datmo devs <dev@datmo.com>
 

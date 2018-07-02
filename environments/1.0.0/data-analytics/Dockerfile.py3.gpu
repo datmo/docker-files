@@ -1,4 +1,4 @@
-FROM datmo/python-base:py35-gpu
+FROM datmo/python-base:gpu-py35
 
 MAINTAINER Datmo devs <dev@datmo.com>
 
