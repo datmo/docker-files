@@ -1,4 +1,4 @@
-FROM datmo/ml-deps:cpu-py27
+FROM datmo/dl-deps:cpu-py27
 
 MAINTAINER Datmo devs <dev@datmo.com>
 
