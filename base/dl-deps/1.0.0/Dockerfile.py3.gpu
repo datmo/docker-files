@@ -8,80 +8,80 @@ RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8
 
 # Install some dependencies
 RUN apt-get update && apt-get install -y \
-        tcl \
-        tk \
-        ant \
-        apt-utils \
-        bazel \
-        bc \
-        build-essential \
-        cmake \
-        default-jdk \
-        doxygen \
-        gfortran \
-        golang \
-        iptables \
-        libav-tools \
-        libboost-all-dev \
-        libeigen3-dev \
-        libfreetype6-dev \
-        libhdf5-dev \
-        libjpeg-turbo8-dev \
-        liblcms2-dev \
-        libopenblas-dev \
-        liblapack-dev \
-        libpng12-dev \
-        libprotobuf-dev \
-        libsdl2-dev \
-        libtiff-dev \
-        libtiff5-dev \
-        libvncserver-dev \
-        libzmq3-dev \
-        nano \
-        net-tools \
-        openmpi-bin \
-        pkg-config \
-        protobuf-compiler \
-        rsync \
-        software-properties-common \
-        swig \
-        unzip \
-        vim \
-        webp \
-        xorg-dev \
-        xvfb \
-    && apt-get clean \
-    && apt-get autoremove \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /var/cache/apt/archives/* \
+		bc \
+		build-essential \
+		cmake \
+		curl \
+		g++ \
+		gfortran \
+		git \
+		libffi-dev \
+		libfreetype6-dev \
+		libhdf5-dev \
+		libjpeg-dev \
+		liblcms2-dev \
+		libopenblas-dev \
+		liblapack-dev \
+		libpng12-dev \
+		libssl-dev \
+		libtiff5-dev \
+		libwebp-dev \
+		libzmq3-dev \
+		nano \
+		pkg-config \
+		python-dev \
+		software-properties-common \
+		unzip \
+		vim \
+		wget \
+		zlib1g-dev \
+		qt5-default \
+		libvtk6-dev \
+		zlib1g-dev \
+		libjpeg-dev \
+		libwebp-dev \
+		libpng-dev \
+		libtiff5-dev \
+		libjasper-dev \
+		libopenexr-dev \
+		libgdal-dev \
+		libdc1394-22-dev \
+		libavcodec-dev \
+		libavformat-dev \
+		libswscale-dev \
+		libtheora-dev \
+		libvorbis-dev \
+		libxvidcore-dev \
+		libx264-dev \
+		yasm \
+		libopencore-amrnb-dev \
+		libopencore-amrwb-dev \
+		libv4l-dev \
+		libxine2-dev \
+		libtbb-dev \
+		libeigen3-dev \
+		python-dev \
+		python-tk \
+		python-numpy \
+		python3-dev \
+		python3-tk \
+		python3-numpy \
+		ant \
+		default-jdk \
+		doxygen \
+		&& \
+	apt-get clean && \
+	apt-get autoremove && \
+	rm -rf /var/lib/apt/lists/* && \
 # Link BLAS library to use OpenBLAS using the alternatives mechanism (https://www.scipy.org/scipylib/building/linux.html#debian-ubuntu)
-    && update-alternatives --set libblas.so.3 /usr/lib/openblas-base/libblas.so.3
+	update-alternatives --set libblas.so.3 /usr/lib/openblas-base/libblas.so.3
 
-RUN pip --no-cache-dir install \
-        Cython \
-        h5py \
-        ipykernel \
-        jupyter \
-        matplotlib \
-        numpy \
-        pandas \
-        path.py \
-        pyyaml \
-        scipy \
-        six \
-        sklearn \
-        sympy \
-        Pillow \
-        zmq \
-        dlib \
-        gym[all] \
-        incremental \
-        nltk \
-        textacy \
-        scikit-image \
-        spacy \
-        tqdm \
-        wheel
+
+RUN pip install --upgrade numpy \
+    && pip --no-cache-dir install sklearn \
+               Pillow \
+               scikit-image \
+               spacy
 
 # Install xgboost
 RUN git clone --recursive https://github.com/dmlc/xgboost \
@@ -92,59 +92,12 @@ RUN git clone --recursive https://github.com/dmlc/xgboost \
     && cd ../.. \
     && rm -rf xgboost
 
-RUN apt-get update && apt-get install -y \
-        python-opencv \
-        libavcodec-dev \
-        libavformat-dev \
-        libav-tools \
-        libavresample-dev \
-        libdc1394-22-dev \
-        libgdal-dev \
-        libgphoto2-dev \
-        libgtk2.0-dev \
-        libjasper-dev \
-        liblapacke-dev \
-        libopencore-amrnb-dev \
-        libopencore-amrwb-dev \
-        libopencv-dev \
-        libopenexr-dev \
-        libswscale-dev \
-        libtbb2 \
-        libtbb-dev \
-        libtheora-dev \
-        libv4l-dev \
-        libvorbis-dev \
-        libvtk6-dev \
-        libx264-dev \
-        libxine2-dev \
-        libxvidcore-dev \
-        qt5-default \
-        && \
-    apt-get clean && \
-    apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/*
-
-ARG OPENCV_VERSION=3.2.0
-
-RUN cd ~/ && \
-    git clone https://github.com/Itseez/opencv.git --branch ${OPENCV_VERSION} --single-branch && \
-    git clone https://github.com/Itseez/opencv_contrib.git --branch ${OPENCV_VERSION} --single-branch && \
-    cd opencv && \
-    mkdir build && \
-    cd build && \
-    cmake -D CMAKE_BUILD_TYPE=RELEASE \
-        -DWITH_QT=ON \
-        -DWITH_OPENGL=ON \
-        -D ENABLE_FAST_MATH=1 \
-        -DFORCE_VTK=ON \
-        -DWITH_TBB=ON \
-        -DWITH_GDAL=ON \
-        -DWITH_XINE=ON \
-        -DBUILD_EXAMPLES=ON \
-        -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
-        .. && \
-    make -j"$(nproc)" && \
-    make install && \
-    ldconfig && \
- # Remove the opencv folders to reduce image size
-    rm -rf ~/opencv*
+RUN git clone --depth 1 https://github.com/opencv/opencv.git /root/opencv && \
+	cd /root/opencv && \
+	mkdir build && \
+	cd build && \
+	cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON -DWITH_XINE=ON -DBUILD_EXAMPLES=ON .. && \
+	make -j"$(nproc)"  && \
+	make install && \
+	ldconfig && \
+	echo 'ln /dev/null /dev/raw1394' >> ~/.bashrc
