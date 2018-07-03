@@ -2,6 +2,10 @@ FROM datmo/dl-deps:gpu-py35
 
 MAINTAINER Datmo devs <dev@datmo.com>
 
+ARG OPENCV_VERSION=3.2.0
+ARG TENSORFLOW_VERSION=v1.8.0
+ARG KERAS_VERSION=2.1.6
+
 RUN pip --no-cache-dir install \
         Cython \
         h5py \
@@ -22,7 +26,6 @@ RUN pip --no-cache-dir install \
         gym[all] \
         incremental \
         nltk \
-        pattern \
         textacy \
         scikit-image \
         spacy \
