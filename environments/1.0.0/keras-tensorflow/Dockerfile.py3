@@ -1,4 +1,4 @@
-FROM datmo/dl-deps:cpu-py35
+FROM datmo/opencv:cpu-py35
 
 MAINTAINER Datmo devs <dev@datmo.com>
 
