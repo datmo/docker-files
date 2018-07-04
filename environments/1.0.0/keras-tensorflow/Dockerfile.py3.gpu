@@ -1,4 +1,4 @@
-FROM datmo/dl-deps:gpu-py35
+FROM datmo/opencv:gpu-py35
 
 MAINTAINER Datmo devs <dev@datmo.com>
 
