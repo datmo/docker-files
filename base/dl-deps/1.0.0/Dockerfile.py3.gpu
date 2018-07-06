@@ -40,21 +40,6 @@ RUN apt-get update && apt-get install -y \
         nano \
         net-tools \
         openmpi-bin \
-        pkg-config \
-        protobuf-compiler \
-        rsync \
-        software-properties-common \
-        swig \
-        unzip \
-        vim \
-        webp \
-        xorg-dev \
-        xvfb \
-    && apt-get clean \
-    && apt-get autoremove \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /var/cache/apt/archives/* \
-# Link BLAS library to use OpenBLAS using the alternatives mechanism (https://www.scipy.org/scipylib/building/linux.html#debian-ubuntu)
     && update-alternatives --set libblas.so.3 /usr/lib/openblas-base/libblas.so.3
 
 RUN pip --no-cache-dir install \
