@@ -1,8 +1,8 @@
-docker build -f Dockerfile.py2 -t datmo/opencv:py27-cpu .
-docker build -f Dockerfile.py2.gpu -t datmo/opencv:py27-gpu .
-docker build -f Dockerfile.py3 -t datmo/opencv:py35-cpu .
-docker build -f Dockerfile.py3.gpu -t datmo/opencv:py35-gpu .
-docker run -v $PWD:/tmp/ -t datmo/opencv:py27-cpu python /tmp/opencv_test.py
-docker run -v $PWD:/tmp/ -t datmo/opencv:py27-gpu python /tmp/opencv_test.py
-docker run -v $PWD:/tmp/ -t datmo/opencv:py35-cpu python /tmp/opencv_test.py
-docker run -v $PWD:/tmp/ -t datmo/opencv:py35-gpu python /tmp/opencv_test.py
+docker build -f Dockerfile.py2 -t datmo/opencv:cpu-py27 .
+docker build -f Dockerfile.py2.gpu -t datmo/opencv:gpu-py27 .
+docker build -f Dockerfile.py3 -t datmo/opencv:cpu-py35 .
+docker build -f Dockerfile.py3.gpu -t datmo/opencv:gpu-py35 .
+docker run -v $PWD:/tmp/ -t datmo/opencv:cpu-py27 python /tmp/opencv_test.py
+docker run -v $PWD:/tmp/ -t datmo/opencv:gpu-py27 python /tmp/opencv_test.py
+docker run -v $PWD:/tmp/ -t datmo/opencv:cpu-py35 python /tmp/opencv_test.py
+docker run -v $PWD:/tmp/ -t datmo/opencv:gpu-py35 python /tmp/opencv_test.py

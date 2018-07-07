@@ -10,3 +10,6 @@ RUN pip --no-cache-dir install tensorflow==${TENSORFLOW_VERSION}
 
 # Install Keras
 RUN pip --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_VERSION}
+
+# Export port for tensorboard
+EXPOSE 6006
