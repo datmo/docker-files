@@ -29,7 +29,7 @@ RUN pip --no-cache-dir install \
         datmo
 
 # Install lightgbm
-RUN pip install --no-binary :all: lightgbm
+RUN pip install lightgbm
 
 # Install xgboost
 RUN git clone --recursive https://github.com/dmlc/xgboost \
