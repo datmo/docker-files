@@ -2,6 +2,9 @@ FROM datmo/opencv:gpu-py27
 
 MAINTAINER Datmo devs <dev@datmo.com>
 
+# Install datmo
+RUN pip install datmo
+
 ARG PYTORCH_VERSION=0.4.0
 ARG PYTORCH_CUDA_VERSION=91
 

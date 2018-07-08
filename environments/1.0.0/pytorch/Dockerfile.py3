@@ -2,6 +2,9 @@ FROM datmo/opencv:cpu-py35
 
 MAINTAINER Datmo devs <dev@datmo.com>
 
+# Install datmo
+RUN pip install datmo
+
 ARG PYTORCH_VERSION=0.4.0
 
 # Install pytorch
