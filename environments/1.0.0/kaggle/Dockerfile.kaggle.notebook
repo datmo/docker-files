@@ -1,4 +1,4 @@
-FROM datmo/kaggle:latest
+FROM datmo/kaggle:cpu
 
 MAINTAINER Datmo devs <dev@datmo.com>
 
