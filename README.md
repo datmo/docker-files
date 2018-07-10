@@ -48,10 +48,10 @@ There are two approaches in creating an environment.
   
   This is a reliable image for ubuntu OS since these are maintained by datmo team. We also accepts PRs for any new environments.
 
-2.Using any dockerhub image, (e.g. kaggle/python:latest).
+2.Using any dockerhub image, (e.g. kaggle/python:latest)
   You can create new environment over this as the base image with new installation as follows. In order to install any other packages over this base image, you can use apt-get or pip package manager for ubuntu, apk for alpine images, yum for CentOS. These options are not completely exhasutive and you can use other package manager based on your base image. 
    
-    # an example for the base docker images is x/y:z is kaggle/python:latest
+    # an example for the base docker images is x/y:z, eg: kaggle/python:latest
     FROM x/y:z      
 
 How to plugin workspaces to your own Environment?
