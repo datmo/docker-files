@@ -6,6 +6,7 @@ MAINTAINER Datmo devs <dev@datmo.com>
 RUN pip --no-cache-dir install \
         ipykernel \
         jupyter \
+        notebook==5.4.0 \
         && \
     python -m ipykernel.kernelspec
 
