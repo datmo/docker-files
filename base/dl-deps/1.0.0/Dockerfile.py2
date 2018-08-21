@@ -48,7 +48,7 @@ RUN pip --no-cache-dir install \
         ipykernel \
         jupyter \
         matplotlib \
-        numpy \
+        numpy==1.14.5 \
         pandas \
         path.py \
         pyyaml \

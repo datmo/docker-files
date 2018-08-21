@@ -8,7 +8,7 @@ RUN pip --no-cache-dir install \
         requests \
         tabulate \
         matplotlib \
-        numpy \
+        numpy==1.14.5 \
         pandas \
         path.py \
         pyyaml \
@@ -47,7 +47,6 @@ RUN git clone --recursive https://github.com/dmlc/xgboost \
 # of all non-final lines. Thanks!
 #
 ###########
-
 
 
 ##### ^^^^ Add new contributions above here ^^^^ #####

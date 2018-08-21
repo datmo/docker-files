@@ -8,7 +8,7 @@ RUN pip --no-cache-dir install \
         requests \
         tabulate \
         matplotlib \
-        numpy \
+        numpy==1.14.5 \
         pandas \
         path.py \
         pyyaml \
